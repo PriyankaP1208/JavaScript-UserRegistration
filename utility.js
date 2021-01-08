@@ -65,7 +65,7 @@ class UserRegistration{
         let password;
         password=readline.question("Enter Password:");
         console.log(password);
-        let regPassword=/^[a-z][A-Z]{8,}/;
+        let regPassword=/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}/;
         if(password.match(regPassword))
         {
             console.log("Valid");
