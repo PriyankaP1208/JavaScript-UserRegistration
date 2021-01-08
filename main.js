@@ -3,4 +3,4 @@ utility.validFirstName();
 utility.validLastName();
 utility.validEmail();
 utility.validMobileFormat();
-utility.PasswordRule1();
+utility.Password();
