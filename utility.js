@@ -30,5 +30,20 @@ class UserRegistration{
             console.log("Invalid");
         }
     }
+    validEmail=()=>
+    {
+        let emailId;
+        emailId=readline.question("Enter Email id:");
+        console.log(emailId);
+        let regEmailId=/^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$/;
+        if(emailId.match(regEmailId))
+        {
+            console.log("Valid");
+        }
+        else
+        {
+            console.log("Invalid");
+        }
+    }
 }
 module.exports=new UserRegistration();
