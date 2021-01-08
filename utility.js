@@ -45,5 +45,20 @@ class UserRegistration{
             console.log("Invalid");
         }
     }
+    validMobileFormat=()=>
+    {
+        let mobNo;
+        mobNo=readline.question("Enter Mobile no:");
+        console.log(mobNo);
+        let regMobNo=/^[0-9]{2}[ ]{1}[1-9]{1}[0-9]{9}/;
+        if(mobNo.match(regMobNo))
+        {
+            console.log("Valid");
+        }
+        else
+        {
+            console.log("Invalid");
+        }
+    }
 }
 module.exports=new UserRegistration();
