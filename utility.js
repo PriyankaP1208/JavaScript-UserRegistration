@@ -60,5 +60,20 @@ class UserRegistration{
             console.log("Invalid");
         }
     }
+    PasswordRule1=()=>
+    {
+        let password;
+        password=readline.question("Enter Password:");
+        console.log(password);
+        let regPassword=/^[a-z]{8,}/;
+        if(password.match(regPassword))
+        {
+            console.log("Valid");
+        }
+        else
+        {
+            console.log("Invalid");
+        }
+    }
 }
 module.exports=new UserRegistration();
