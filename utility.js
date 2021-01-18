@@ -1,79 +1,69 @@
 const readline=require('readline-sync');
 class UserRegistration{
-    validFirstName=()=>
+    validFirstName=(First_Name)=>
     {
-        let firstName;
-        firstName=readline.question("Enter First Name:");
-        console.log(firstName);
-        let regFirstName=/^[A-Z][a-z]{3,}$/;
-        if(firstName.match(regFirstName))
+        let regName=/^[A-Z]{1,}[a-z]{3,}$/;
+        let firstName=First_Name;
+        let result=firstName.match(regName);
+        return result;
+        /*do
         {
-            console.log("Valid");
-        }
-        else
-        {
-            console.log("Invalid");
-        }
+            firstName=readline.question("Enter valid first name:");
+        }while(!firstName.match(regName))*/
+        //console.log("valid:");
     }
-    validLastName=()=>
+    validLastName=(Last_Name)=>
     {
-        let lastName;
-        lastName=readline.question("Enter Last Name:");
-        console.log(lastName);
-        let regLastName=/^[A-Z][a-z]{3,}$/;
-        if(lastName.match(regLastName))
+        let regName=/^[A-Z]{1,}[a-z]{3,}$/;
+        let lastName=Last_Name;
+        let result=lastName.match(regName);
+        return result;
+        /*do
         {
-            console.log("Valid");
-        }
-        else
-        {
-            console.log("Invalid");
-        }
+            lastName=readline.question("Enter valid last name:");
+        }while(!lastName.match(regName))
+        console.log("valid:");*/
     }
-    validEmail=()=>
+    validEmail=(Email_Id)=>
     {
         let emailId;
-        emailId=readline.question("Enter Email id:");
-        console.log(emailId);
         let regEmailId=/^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$/;
-        if(emailId.match(regEmailId))
-        {
-            console.log("Valid");
+        emailId=Email_Id;
+        let result=emailId.match(regEmailId);
+        return result;
+        /*do{
+            emailId=readline.question("Enter valid Email id:");
         }
-        else
-        {
-            console.log("Invalid");
-        }
+        while(!emailId.match(regEmailId));
+        console.log("Valid");*/
     }
-    validMobileFormat=()=>
+    validMobileFormat=(mob_No)=>
     {
-        let mobNo;
-        mobNo=readline.question("Enter Mobile no:");
-        console.log(mobNo);
         let regMobNo=/^[0-9]{2}[ ]{1}[1-9]{1}[0-9]{9}/;
-        if(mobNo.match(regMobNo))
+        let mobNo=mob_No;
+        let result;
+        result=mobNo.match(regMobNo);
+        /*do
         {
-            console.log("Valid");
+            mobNo=readline.question("Enter valid Mobile no:");
         }
-        else
-        {
-            console.log("Invalid");
-        }
+        while(!mobNo.match(regMobNo));*/
+        //console.log("Valid");
+        return result;
     }
-    Password=()=>
+    Password=(Password)=>
     {
         let password;
-        password=readline.question("Enter Password:");
-        console.log(password);
         let regPassword=/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&+=]).{8,}/;
-        if(password.match(regPassword))
-        {
-            console.log("Valid");
+        password=Password;
+        let result=password.match(regPassword);
+        return result;
+        /*do{
+            password=readline.question("Enter valid Password:");
         }
-        else
-        {
-            console.log("Invalid");
-        }
+        while(!password.match(regPassword));
+        console.log("Valid");*/
     }
 }
+        
 module.exports=new UserRegistration();
